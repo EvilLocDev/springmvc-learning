@@ -5,7 +5,9 @@
 package com.ntl.configs;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
+import org.thymeleaf.extras.springsecurity6.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
@@ -14,6 +16,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
  *
  * @author locnguyen
  */
+@Configuration
 public class ThymeleafConfig {
     @Bean
     public ClassLoaderTemplateResolver templateResolver() {
@@ -29,6 +32,7 @@ public class ThymeleafConfig {
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
+        templateEngine.addDialect(new SpringSecurityDialect());
         return templateEngine;
     }
 
