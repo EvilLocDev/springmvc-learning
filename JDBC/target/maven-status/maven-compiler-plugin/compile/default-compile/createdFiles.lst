@@ -1,5 +1,5 @@
-com/ntl/jdbc/Tester.class
 com/ntl/jdbc/JDBC.class
+com/ntl/jdbc/Tester.class
 com/ntl/pojo/Category.class
 com/ntl/pojo/Question.class
 com/ntl/services/QuestionService.class
