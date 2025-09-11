@@ -1,0 +1,29 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ntl.formatters;
+
+import com.ntl.pojo.Category;
+import java.text.ParseException;
+import java.util.Locale;
+import org.springframework.format.Formatter;
+
+/**
+ *
+ * @author locnguyen
+ */
+public class CategoryFormatter implements Formatter<Category> {
+
+    @Override //Chuyen id cate thanh string
+    public String print(Category c, Locale locale) {
+        return String.valueOf(c.getId());
+    }
+
+    @Override //Chuyen tu chuoi cateId thanh doi tuong cate
+    public Category parse(String cateId, Locale locale) throws ParseException {
+        Category c = new Category();
+        c.setId(Integer.valueOf(cateId));
+        return c;
+    }
+}

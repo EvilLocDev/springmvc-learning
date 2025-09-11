@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <th:object th:replace="base :: bt"></th:object>
+</head>
+<body>
+    <div th:replace="base :: menu"></div>
+
+    <main class="container">
+        <h1 class="text-center text-info mt-2">DANG NHAP</h1>
+
+        <form method="post" th:action="@{/login}">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="name" name="username" placeholder="Ten dang nhap">
+                <label for="name">Ten dang nhap</label>
+            </div>
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="price" name="password" placeholder="Mat khau">
+                <label for="price">Mat khau</label>
+            </div>
+            <div class="form-floating mb-3 mt-3">
+                <button class="btn btn-success">Dang nhap</button>
+            </div>
+        </form>
+
+    </main>
+
+    <div th:replace="base :: footer"></div>
+</body>
+</html>
+
+
